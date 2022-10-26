@@ -1,0 +1,43 @@
+<ul class="nav nav-pills mb-4">
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link"
+        [ngClass]="{'active': someFrameWork === 'angular'}"
+        (click)="someFrameWork = 'angular'">Angular</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link"
+        [ngClass]="{'active': someFrameWork === 'react'}"
+        (click)="someFrameWork = 'react'">React</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" class="nav-link"
+        [ngClass]="{'active': someFrameWork === 'vue'}"
+        (click)="someFrameWork = 'vue'">Vue</a>
+    </li>
+</ul>
+
+
+
+<div [ngSwitch]="someFrameWork">
+    <div class="card">
+        <div class="card-body" *ngSwitchCase="'angular'">
+            <strong>Angular</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, maiores!
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" *ngSwitchCase="'react'">
+            <strong>React</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, maiores!
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body" *ngSwitchCase="'vue'">
+            <strong>Vue</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, maiores!
+        </div>
+    </div>
+        
+        <div class="card">
+            <div class="card-body" *ngSwitchDefault>
+                <strong>No FrameWork  Selected Yet</strong>
+            </div>
+        </div>
+</div>

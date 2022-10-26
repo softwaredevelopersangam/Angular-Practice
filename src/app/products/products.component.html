@@ -2,6 +2,12 @@
 <input type="text" id="item" class="form-control mb-4"
     (input)="onClickSearch($event)">
 
+    <input type="text" id="item" class="form-control mb-4"
+    [(ngModel)]="productNames">
+
+
+    <p>{{productNames}}</p>
+
 <button class="btn btn-primary" [disabled]="isDisabled"
     (click)="onClickProduct()">Add Products</button>
 
@@ -15,4 +21,10 @@
             I Love {{skill}}
         </li>
     </ul>
+    <!-- directive => are introctions to the dom
+        components 
+        attribute directive
+        structurer directive
+    
+    -->
 </div>

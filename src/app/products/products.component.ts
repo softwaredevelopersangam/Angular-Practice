@@ -2,6 +2,7 @@ import { OnInit, NgModule, Component } from '@angular/core';
 
 @Component({
     selector:'app-products',
+    // selector:{'.app-products'},
     templateUrl:'./products.component.html',
     // template:`
     //     <p>single component created</p>
@@ -21,6 +22,7 @@ export class ProductsComponents implements OnInit{
     public isDisabled: boolean = true;
     public productStates:string = 'No Product Add to Cart'
     public productAddStates:number = 0;
+    public productNames:string ='sangmsun';
     // $Event: any;
     public skills:string[] = [ 'Html', 'Angular', 'CSS', 'Javascript'];
     ngOnInit(): void {
@@ -37,7 +39,8 @@ export class ProductsComponents implements OnInit{
     }
     onClickSearch(eve:Event){
         let inputValue = ((eve.target) as HTMLInputElement)!.value
-        console.log(inputValue);
-        
+        // console.log(inputValue);
+        this.productNames = inputValue;
     }
+   
 }

@@ -1,2 +1,14 @@
-<p>The product compents created know</p>
-<input type="text" [value]="items"> 
+<p [ngStyle]="{backgroundColor : getBgColor()}"
+    [ngClass]="{'text-white':isProductAvailable,
+                   'p-4':isProductAvailable,
+                   'p-3':!isProductAvailable 
+                    }">The product id {{productName}} with product id {{productid}}
+    <!-- <p [ngStyle]="{backgroundColor : this.isProductAvailable?'orange':'#ccc'}">The product id {{productName}} with product id {{productid}} -->
+    <span *ngIf="isProductAvailable; else productNotAvailable">Product is Available</span>
+    <ng-template #productNotAvailable>
+        <span>Product is Not Available</span>
+    </ng-template>    
+</p>
+
+
+<input type="text" [value]="items" class="mb-4"> 
